@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keysa Alfaro M.s | Portfolio</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#090a0f',
+                        cardBg: 'rgba(18, 20, 29, 0.75)',
+                        cardBorder: 'rgba(255, 255, 255, 0.08)',
+                        accentEmerald: '#10b981',
+                        accentBlue: '#3b82f6',
+                        accentPurple: '#8b5cf6',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 8s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        glow: {
+                            '0%': { opacity: 0.4, transform: 'scale(1)' },
+                            '100%': { opacity: 0.8, transform: 'scale(1.1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #08090d;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Modern Grid & Glow Background Effect */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+
+        /* Glassmorphism Styling */
+        .glass-panel {
+            background: rgba(16, 18, 27, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-pill:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Smooth card hover lift */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08090d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen antialiased selection:bg-emerald-500 selection:text-black">
+
+    <!-- Dynamic Background Lights & Grid -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+    <div class="fixed -top-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none z-0 animate-glow"></div>
+    <div class="fixed top-1/2 -right-40 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none z-0 animate-glow" style="animation-delay: 3s;"></div>
+    <div class="fixed -bottom-40 left-1/3 w-96 h-96 bg-purple-600/10 rounded-full blur-[130px] pointer-events-none z-0 animate-glow" style="animation-delay: 5s;"></div>
+
+    <!-- Main Container -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-20 min-h-screen flex flex-col justify-between">
+        
+        <!-- HEADER / NAVIGATION BAR -->
+        <header class="w-full">
+            <nav class="glass-panel rounded-full px-4 py-3 sm:px-6 sm:py-3.5 flex items-center justify-between transition-all duration-300">
+                <!-- Profile / Logo Info -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden p-[1.5px] bg-gradient-to-tr from-emerald-500 to-blue-500">
+                        <img 
+                            src="https://framerusercontent.com/images/F8gxa9NGpEhq0rV5J0yUcC1LFvY.jpeg" 
+                            alt="Keysa Alfaro M.s" 
+                            class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.onerror=null; this.src='https://placehold.co/100x100/111827/ffffff?text=KM';"
+                        />
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-sm sm:text-base text-white group-hover:text-emerald-400 transition-colors leading-snug">
+                            Keysa Alfaro M.s
+                        </h1>
+                        <p class="text-[11px] text-zinc-400 font-medium">Information System</p>
+                    </div>
+                </a>
+
+                <!-- Navigation Links (Desktop) -->
+                <div class="hidden md:flex items-center gap-1 glass-pill px-3 py-1.5 rounded-full text-xs font-medium text-zinc-300">
+                    <a href="#work" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Work</a>
+                    <a href="#services" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Services</a>
+                    <a href="#experience" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Experience</a>
+                    <button onclick="copyEmail('keysa.alfaro@gmail.com')" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all text-emerald-400 font-semibold flex items-center gap-1.5">
+                        <i class="fa-regular me-1 fa-envelope"></i> Email
+                    </button>
+                </div>
+
+                <!-- Right Actions & Mobile Toggle -->
+                <div class="flex items-center gap-2">
+                    <a href="https://www.instagram.com/faroox_x" target="_blank" rel="noopener noreferrer" class="glass-pill px-4 py-2 rounded-full text-xs font-semibold text-white flex items-center gap-2 hover:bg-emerald-500/20 hover:border-emerald-500/40 transition-all">
+                        <i class="fa-brands fa-instagram text-emerald-400 text-sm"></i>
+                        <span class="hidden sm:inline">@faroox_x</span>
+                    </a>
+                    <button id="mobileMenuBtn" class="md:hidden glass-pill p-2.5 rounded-full text-zinc-300 hover:text-white">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-3 glass-panel rounded-2xl p-4 flex flex-col gap-2 text-sm text-zinc-300 font-medium animate-fadeIn">
+                <a href="#work" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-all">Work</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-all">Services</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-all">Experience</a>
+                <button onclick="copyEmail('keysa.alfaro@gmail.com'); toggleMobileMenu();" class="text-left px-4 py-2.5 rounded-xl hover:bg-white/5 text-emerald-400 font-semibold flex items-center gap-2">
+                    <i class="fa-regular fa-envelope"></i> Copy Email
+                </button>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <main class="my-12 sm:my-20 flex flex-col items-start gap-8">
+            
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-pill border border-emerald-500/20 text-xs font-medium text-emerald-300 shadow-sm">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                Available for '2026
+            </div>
+
+            <!-- Title & Subtitle / Quote -->
+            <div class="space-y-4 max-w-3xl">
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] font-heading">
+                    Engineering <br class="hidden sm:inline"/>
+                    <span class="bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">Information System</span>
+                </h1>
+                
+                <!-- Quote Box -->
+                <div class="relative pl-4 sm:pl-6 border-l-2 border-emerald-500/60 py-1 my-2">
+                    <p class="text-base sm:text-lg text-zinc-300 italic font-light leading-relaxed">
+                        &ldquo;Kalau cinta itu seperti coding, kamu adalah hasil run program paling sempurna dalam hidupku.&rdquo;
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA Actions & Social Proof Stack -->
+            <div class="w-full pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                <!-- Action Button -->
+                <div class="flex items-center gap-3">
+                    <a href="https://www.instagram.com/faroox_x" target="_blank" rel="noopener noreferrer" 
+                       class="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-black font-semibold text-sm shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:scale-[1.02]">
+                        <span>My profil</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                    
+                    <button onclick="copyEmail('keysa.alfaro@gmail.com')" class="glass-pill px-5 py-3.5 rounded-full text-xs font-semibold text-zinc-300 hover:text-white flex items-center gap-2">
+                        <i class="fa-regular fa-paper-plane text-emerald-400"></i>
+                        <span>Contact Me</span>
+                    </button>
+                </div>
+
+                <!-- Friends Social Proof Stack -->
+                <div class="glass-panel px-4 py-2.5 rounded-2xl flex items-center gap-3 border border-zinc-800">
+                    <!-- Overlapping Avatars -->
+                    <div class="flex -space-x-2.5 overflow-hidden p-0.5">
+                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://framerusercontent.com/images/iETMTTcxeZcYRlrvWxm55JnlajQ.jpeg" alt="Friend 1" onerror="this.onerror=null; this.src='https://placehold.co/50x50/222/fff?text=U1';" />
+                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://framerusercontent.com/images/jPABHtqRsPgwJ148CiVEZGUoh0.jpeg" alt="Friend 2" onerror="this.onerror=null; this.src='https://placehold.co/50x50/222/fff?text=U2';" />
+                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://framerusercontent.com/images/V1cxq60VrswrpPTUcKngsM8c0oc.jpeg" alt="Friend 3" onerror="this.onerror=null; this.src='https://placehold.co/50x50/222/fff?text=U3';" />
+                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://framerusercontent.com/images/pUpM3tDiobUw557xUxol989UeAY.jpeg" alt="Friend 4" onerror="this.onerror=null; this.src='https://placehold.co/50x50/222/fff?text=U4';" />
+                    </div>
+                    <div class="text-xs">
+                        <span class="font-bold text-white block">99+ My Friends</span>
+                        <span class="text-zinc-400 text-[10px]">Connected & Collaborative</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- SERVICES / SPECIALTIES SECTION -->
+        <section id="services" class="my-10 pt-6">
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-6">
+                <i class="fa-solid fa-layer-group text-xs"></i>
+                <span>Core Competencies</span>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="glass-panel p-5 rounded-2xl hover-card">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-diagram-project text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1">System Architecture</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Designing reliable, scalable, and structured information systems tailored for modern enterprise needs.</p>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl hover-card">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-code text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1">Full-Stack Development</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Crafting responsive web applications with robust backend logic and intuitive user experiences.</p>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl hover-card">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-database text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1">Database & Analytics</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Managing complex data pipelines, relational databases, and dynamic information workflows.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LATEST EXPERIENCE SECTION -->
+        <section id="experience" class="my-10 pt-6">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight">
+                        Latest Experience
+                    </h2>
+                    <p class="text-xs sm:text-sm text-zinc-400 mt-1">Highlighted certifications and technical projects</p>
+                </div>
+                <div class="h-px bg-zinc-800 flex-1 ml-6 hidden sm:block"></div>
+            </div>
+
+            <!-- Experience Cards Grid -->
+            <div id="work" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- CARD 1: CERTIFICATE -->
+                <div class="glass-panel rounded-3xl overflow-hidden hover-card flex flex-col justify-between group">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+                        <img 
+                            src="https://framerusercontent.com/images/MRPCQl2F4k08Dvghs6pbFjl0cY.jpeg" 
+                            alt="Asean Academy Certificate" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/ffffff?text=Asean+Academy';"
+                        />
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-black/60 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
+                                CERTIFICATE
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex flex-col gap-4 flex-1 justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug">
+                                Asean Academy, Google Academy 📖
+                            </h3>
+                            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                                Professional accreditation and training in advanced digital systems, enterprise cloud technology, and information systems design.
+                            </p>
+                        </div>
+
+                        <div class="pt-2 flex items-center justify-between">
+                            <button 
+                                onclick="openModal('Asean Academy, Google Academy 📖', 'CERTIFICATE', 'https://framerusercontent.com/images/MRPCQl2F4k08Dvghs6pbFjl0cY.jpeg', 'Completed certification under ASEAN & Google Academy programs focusing on cloud architecture, digital business transformations, and data analysis.')"
+                                class="glass-pill px-4 py-2 rounded-full text-xs font-semibold text-white group-hover:bg-emerald-500 group-hover:text-black transition-all flex items-center gap-2">
+                                <span>View Project</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                            <span class="text-[11px] text-zinc-500 font-medium">Verified Certificate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: PROJECT -->
+                <div class="glass-panel rounded-3xl overflow-hidden hover-card flex flex-col justify-between group">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+                        <img 
+                            src="https://framerusercontent.com/images/UfVv5zQw61YHmgbueQQ4YDhZg.jpeg" 
+                            alt="Quantum Information System Project" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/ffffff?text=Quantum+IS';"
+                        />
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-black/60 text-blue-400 border border-blue-500/30 backdrop-blur-md">
+                                PROJECT
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex flex-col gap-4 flex-1 justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
+                                Quantum Information System
+                            </h3>
+                            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                                High-performance data architecture platform designed to streamline information workflow, real-time analytics, and system integration.
+                            </p>
+                        </div>
+
+                        <div class="pt-2 flex items-center justify-between">
+                            <button 
+                                onclick="openModal('Quantum Information System', 'PROJECT', 'https://framerusercontent.com/images/UfVv5zQw61YHmgbueQQ4YDhZg.jpeg', 'A full-scale Information System project utilizing modern data frameworks to optimize process management and automated reporting.')"
+                                class="glass-pill px-4 py-2 rounded-full text-xs font-semibold text-white group-hover:bg-blue-500 group-hover:text-black transition-all flex items-center gap-2">
+                                <span>View Project</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                            <span class="text-[11px] text-zinc-500 font-medium">Full Stack & DB</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="mt-16 pt-8 border-t border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+            <div class="flex items-center gap-3">
+                <img 
+                    src="https://framerusercontent.com/images/F8gxa9NGpEhq0rV5J0yUcC1LFvY.jpeg" 
+                    alt="Keysa Avatar" 
+                    class="w-6 h-6 rounded-full object-cover"
+                    onerror="this.onerror=null; this.src='https://placehold.co/50x50/222/fff?text=K';"
+                />
+                <span>&copy; 2026 Keysa Alfaro M.s. All rights reserved.</span>
+            </div>
+
+            <div class="flex items-center gap-4 text-zinc-400">
+                <a href="https://www.instagram.com/faroox_x" target="_blank" class="hover:text-emerald-400 transition-colors">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <button onclick="copyEmail('keysa.alfaro@gmail.com')" class="hover:text-emerald-400 transition-colors">
+                    <i class="fa-regular fa-envelope text-sm"></i>
+                </button>
+                <a href="#top" class="hover:text-emerald-400 transition-colors flex items-center gap-1">
+                    <span>Back to top</span>
+                    <i class="fa-solid fa-arrow-up text-[10px]"></i>
+                </a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- MODAL FOR PROJECT/CERTIFICATE DETAILS -->
+    <div id="projectModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-panel w-full max-w-xl rounded-3xl p-6 sm:p-8 transform scale-95 transition-transform duration-300 relative border border-zinc-700/60">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full glass-pill text-zinc-400 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+
+            <span id="modalTag" class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 inline-block mb-3">
+                TAG
+            </span>
+
+            <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold text-white mb-4 font-heading">
+                Project Title
+            </h3>
+
+            <div class="rounded-2xl overflow-hidden mb-5 aspect-[16/9] bg-zinc-900 border border-zinc-800">
+                <img id="modalImg" src="" alt="Detail Preview" class="w-full h-full object-cover">
+            </div>
+
+            <p id="modalDesc" class="text-zinc-300 text-xs sm:text-sm leading-relaxed mb-6">
+                Detailed description content here.
+            </p>
+
+            <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+                <a href="https://www.instagram.com/faroox_x" target="_blank" class="px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-all flex items-center gap-2">
+                    <span>Contact Author</span>
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <button onclick="closeModal()" class="text-xs text-zinc-400 hover:text-white transition-colors">
+                    Close Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 glass-panel border border-emerald-500/40 text-emerald-300 text-xs font-semibold px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 translate-y-16 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span id="toastMsg">Action successful!</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Toggle Mobile Navigation Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Copy Email to Clipboard with Custom Toast
+        function copyEmail(emailText) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(emailText);
+            } else {
+                // Fallback method
+                const textArea = document.createElement("textarea");
+                textArea.value = emailText;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Fallback copy failed', err);
+                }
+                document.body.removeChild(textArea);
+            }
+            showToast("Email address copied to clipboard!");
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = message;
+            
+            toast.classList.remove('translate-y-16', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-16', 'opacity-0');
+            }, 3000);
+        }
+
+        // Modal Functionality for Viewing Project Details
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalTag = document.getElementById('modalTag');
+        const modalImg = document.getElementById('modalImg');
+        const modalDesc = document.getElementById('modalDesc');
+
+        function openModal(title, tag, imgSrc, desc) {
+            modalTitle.innerText = title;
+            modalTag.innerText = tag;
+            modalImg.src = imgSrc;
+            modalDesc.innerText = desc;
+
+            if (tag === 'CERTIFICATE') {
+                modalTag.className = 'px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 inline-block mb-3';
+            } else {
+                modalTag.className = 'px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-400 border border-blue-500/30 inline-block mb-3';
+            }
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+            modal.firstElementChild.classList.remove('scale-95');
+            modal.firstElementChild.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.firstElementChild.classList.remove('scale-100');
+            modal.firstElementChild.classList.add('scale-95');
+        }
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Close modal on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
